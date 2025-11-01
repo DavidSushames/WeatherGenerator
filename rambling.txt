@@ -1,0 +1,5 @@
+Roll all = Just roll all 3 and update.
+Roll 2 = Have an Int that keeps looping. 1 2 3 1 2 3. If 1, roll Temp and Prec. If 2, roll Prec and Wind. If 3, roll Wind and Temp.
+Roll 1 = Same as Roll 2 but different.
+
+Season = If Spring, +1 Wet. if Mid-season, +1 Wet.
