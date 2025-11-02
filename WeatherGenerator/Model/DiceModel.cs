@@ -62,5 +62,20 @@ namespace Weather_Generation.WeatherGenerator.Model
             TempretureDice = rng.Next(1, 7);
         }
 
+        public bool EqualsWind(int value)
+        {
+            return value == WindDice;
+        }
+
+        public bool EqualsTemp(int value)
+        {
+            return value == TempretureDice;
+        }
+
+        public bool EqualsPrecip(int value)
+        {
+            return value == PrecipDice;
+        }
+
     }
 }
