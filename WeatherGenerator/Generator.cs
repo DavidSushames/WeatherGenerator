@@ -5,26 +5,26 @@ namespace Weather_Generation.WeatherGenerator
 {
     public class Generator
     {
-        private Season season { get; }
-        private Biome biome { get; }
+        private Season Season { get; }
+        private Biome Biome { get; }
         private bool Midwinter { get; set; }
-        private DiceModel diceModel { get; }
-        public Weather weather { get; private set; }
+        private DiceModel DiceModel { get; }
+        public Weather Weather { get; private set; }
 
         //refactor this to make generator once, then regen as many times as needs be.
         public Generator(Season season, Biome biome, bool midwinter)
         {
-            this.season = season;
-            this.biome = biome;
+            Season = season;
+            Biome = biome;
             Midwinter = midwinter;
-            diceModel = new DiceModel();
-            weather = GenerateWeather();
+            DiceModel = new DiceModel();
+            Weather = GenerateWeather();
         }
 
         public Generator(Season season, Biome biome, bool midwinter, int seedValue) : this(season, biome, midwinter)
         {
-            diceModel = new DiceModel(seedValue);
-            weather = GenerateWeather();
+            DiceModel = new DiceModel(seedValue);
+            Weather = GenerateWeather();
         }
 
         private DiceModel SeasonalModifiers(DiceModel model, Season season)
@@ -62,15 +62,15 @@ namespace Weather_Generation.WeatherGenerator
 
         private Weather GenerateWeather()
         {
-            DiceModel weatherDice = diceModel.Copy();
+            DiceModel weatherDice = DiceModel.Copy();
             if (weatherDice == null)
                 weatherDice = new DiceModel();
-            weatherDice = SeasonalModifiers(weatherDice, season);
-            weatherDice = BiomeModifiers(weatherDice, biome);
+            weatherDice = SeasonalModifiers(weatherDice, Season);
+            weatherDice = BiomeModifiers(weatherDice, Biome);
             WeatherWindEffects wind = (WeatherWindEffects)weatherDice.WindDice;
             WeatherPrecipEffects precip = (WeatherPrecipEffects)weatherDice.PrecipDice;
             WeatherTempEffects temp = (WeatherTempEffects)weatherDice.TempretureDice;
-            return new Weather(season, biome, wind, temp, precip);
+            return new Weather(Season, Biome, wind, temp, precip);
         }
 
     }

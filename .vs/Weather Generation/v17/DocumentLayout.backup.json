@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|c:\\users\\quart\\source\\repos\\weathergenerator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|c:\\users\\quart\\source\\repos\\weathergenerator\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|C:\\Users\\quart\\source\\repos\\WeatherGenerator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|c:\\users\\quart\\source\\repos\\weathergenerator\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -21,11 +21,11 @@
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 178,
+          "DockedWidth": 323,
           "SelectedChildIndex": 5,
           "Children": [
             {
@@ -39,6 +39,27 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-11-02T01:38:36.441Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,21 +81,9 @@
               "RelativeDocumentMoniker": "Form1.Designer.cs",
               "ToolTip": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T03:00:55.13Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAApwDwAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T02:56:10.692Z",
+              "WhenOpened": "2025-10-30T03:00:55.13Z",
               "EditorCaption": ""
             },
             {
@@ -83,10 +92,11 @@
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Dave\\Desktop\\Weather Generation\\Form1.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Dave\\Desktop\\Weather Generation\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\quart\\source\\repos\\WeatherGenerator\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T02:21:46.379Z"
+              "WhenOpened": "2025-10-30T02:21:46.379Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
