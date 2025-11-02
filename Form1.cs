@@ -15,13 +15,20 @@ namespace Weather_Generation
     public partial class Form1 : Form
     {
         readonly Random random = new Random();
+        int rollTemp;
+        int tempMod;
+        int rollPrec;
+        int precMod;
+        int rollWind;
+        int windMod;
+        int counter = 0;
+        string checkMatch = "null";
         public Form1()
         {
             InitializeComponent();
         }
         public void RollTemp()
         {
-            int rollTemp;
             rollTemp = random.Next(1, 7);
             lbxTemperature.Items.Insert(0, rollTemp);
 
@@ -36,12 +43,11 @@ namespace Weather_Generation
             int tempModMult = 1;
             if (cbxMidseason.Checked) tempModMult = 2;
             
-            int tempMod = (tempSeasonMod * tempModMult) + tempClimateMod;
+            tempMod = (tempSeasonMod * tempModMult) + tempClimateMod;
             lbxTempMod.Items.Insert(0, tempMod);
         }
         public void RollPrec()
         {
-            int rollPrec;
             rollPrec = random.Next(1, 7);
             lbxPrecipitation.Items.Insert(0, rollPrec);
 
@@ -55,12 +61,11 @@ namespace Weather_Generation
             int precModMult = 1;
             if (cbxMidseason.Checked) precModMult = 2;
             
-            int precMod = (precSeasonMod * precModMult) + precClimateMod;
+            precMod = (precSeasonMod * precModMult) + precClimateMod;
             lbxPrecMod.Items.Insert(0, precMod);
         }
         public int RollWind()
         {
-            int rollWind;
             rollWind = random.Next(1, 7);
             lbxWind.Items.Insert(0, rollWind);
 
@@ -73,14 +78,14 @@ namespace Weather_Generation
             int windModMult = 1;
             if (cbxMidseason.Checked) windModMult = 2;
 
-            int windMod = (windSeasonMod * windModMult) + windClimateMod;
+            windMod = (windSeasonMod * windModMult) + windClimateMod;
             lbxWindMod.Items.Insert(0, windMod);
 
             return rollWind;
         }
         public void GenWeather()
         {
-            lbxWeather.Items.Insert(0, "rollWind should go here");
+            lbxWeather.Items.Insert(0, $"{rollTemp} {rollPrec} {rollWind} {checkMatch}");
         }
 
         private void btnRollAll_Click(object sender, EventArgs e)
@@ -88,16 +93,93 @@ namespace Weather_Generation
             RollTemp();
             RollPrec();
             RollWind();
+            checkDoubleTriple();
+            GenWeather();
+        }
+        public void Roll2()
+        {
+            if (rollTemp == 0 || rollPrec == 0 || rollWind == 0)
+            {
+                RollTemp();
+                RollPrec();
+                RollWind();
+            }
+            else if (counter == 0) // Temp Prec
+            {
+                RollTemp();
+                RollPrec();
+                lbxWind.Items.Insert(0, rollWind);
+                counter++;
+            }
+            else if (counter == 1) // Prec Wind
+            {
+                lbxTemperature.Items.Insert(0, rollTemp);
+                RollPrec();
+                RollWind();
+                counter++;
+            }
+            else if (counter == 2) // Wind Temp
+            {
+                RollTemp();
+                lbxPrecipitation.Items.Insert(0, rollPrec);
+                RollWind();
+                counter = 0;
+            }
+        }
+        private void btnRoll2_Click(object sender, EventArgs e)
+        {
+            Roll2();
+            checkDoubleTriple();
             GenWeather();
         }
 
-        private void btnRoll2_Click(object sender, EventArgs e)
+        public void Roll1()
         {
-
+            if (rollTemp == 0 || rollPrec == 0 || rollWind == 0)
+            {
+                RollTemp();
+                RollPrec();
+                RollWind();
+            }
+            else if (counter == 0) // Temp
+            {
+                RollTemp();
+                lbxPrecipitation.Items.Insert(0, rollPrec);
+                lbxWind.Items.Insert(0, rollWind);
+                counter++;
+            }
+            else if (counter == 1) // Prec
+            {
+                lbxTemperature.Items.Insert(0, rollTemp);
+                RollPrec();
+                lbxWind.Items.Insert(0, rollWind);
+                counter++;
+            }
+            else if (counter == 2) // Wind
+            {
+                lbxTemperature.Items.Insert(0, rollTemp);
+                lbxPrecipitation.Items.Insert(0, rollPrec);
+                RollWind();
+                counter = 0;
+            }
         }
-
         private void btnRoll1_Click(object sender, EventArgs e)
         {
+            Roll1();
+            checkDoubleTriple();
+            GenWeather();
+        }
+        public void checkDoubleTriple()
+        {
+            if (rollTemp == rollPrec && rollPrec == rollWind && rollWind == rollTemp) //Check for triples
+            {
+                checkMatch = "- TRIPLE";
+            }
+            else if (rollTemp == rollPrec || rollPrec == rollWind || rollWind == rollTemp) //Check for doubles
+            {
+                checkMatch = "- Double";
+            }
+            else { checkMatch = ""; }
 
         }
     }
