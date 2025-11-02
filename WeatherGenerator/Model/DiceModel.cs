@@ -10,6 +10,13 @@ namespace Weather_Generation.WeatherGenerator.Model
         public int PrecipDice { get; private set; }
         public int TempretureDice { get; private set; }
 
+        private DiceModel(int d1, int d2, int d3)
+        {
+            WindDice = d1;
+            PrecipDice = d2;
+            TempretureDice = d3;
+        }
+
         public DiceModel()
         {
             rng = new Random(Guid.NewGuid().GetHashCode());
@@ -90,6 +97,16 @@ namespace Weather_Generation.WeatherGenerator.Model
         public void ModifyPrecip(int value)
         {
             PrecipDice += value;
+        }
+
+        public DiceModel Copy()
+        {
+            return new DiceModel(WindDice, PrecipDice, TempretureDice);
+        }
+
+        public override string ToString()
+        {
+            return $"Current Dice Rolls: \nWind: {WindDice}\nTemptreture: {TempretureDice}\nPrecipitation: {PrecipDice}";
         }
 
     }
