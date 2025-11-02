@@ -58,6 +58,9 @@
     <Compile Include="WeatherGenerator\Model\DiceModel.cs" />
     <Compile Include="WeatherGenerator\Model\Enums\Biome.cs" />
     <Compile Include="WeatherGenerator\Model\Enums\Season.cs" />
+    <Compile Include="WeatherGenerator\Model\Enums\WeatherPrecipEffects.cs" />
+    <Compile Include="WeatherGenerator\Model\Enums\WeatherTempEffects.cs" />
+    <Compile Include="WeatherGenerator\Model\Enums\WeatherWindEffects.cs" />
     <Compile Include="WeatherGenerator\Model\Weather.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
