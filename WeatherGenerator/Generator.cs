@@ -17,5 +17,10 @@ namespace Weather_Generation.WeatherGenerator
             Midwinter = midwinter;
             diceModel = new DiceModel();
         }
+
+        public Generator(Season season, Biome biome, bool midwinter, int seedValue) : this(season, biome, midwinter)
+        {
+            diceModel = new DiceModel(seedValue);
+        }
     }
 }

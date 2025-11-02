@@ -13,53 +13,53 @@ namespace Weather_Generation.WeatherGenerator.Model
         public DiceModel()
         {
             rng = new Random(Guid.NewGuid().GetHashCode());
-            WindDice = rng.Next(1, 7);
-            PrecipDice = rng.Next(1, 7);
-            TempretureDice = rng.Next(1, 7);
+            WindDice = rng.Next(0, 6);
+            PrecipDice = rng.Next(0, 6);
+            TempretureDice = rng.Next(0, 6);
         }
 
         public DiceModel(int seedValue)
         {
             rng = new Random(seedValue);
-            WindDice = rng.Next(1, 7);
-            PrecipDice = rng.Next(1, 7);
-            TempretureDice = rng.Next(1, 7);
+            WindDice = rng.Next(0, 6);
+            PrecipDice = rng.Next(0, 6);
+            TempretureDice = rng.Next(0, 6);
         }
 
         public void RerollWind()
         {
             rng = new Random(Guid.NewGuid().GetHashCode());
-            WindDice = rng.Next(1, 7);
+            WindDice = rng.Next(0, 6);
         }
 
         public void RerollWind(int seedValue)
         {
             rng = new Random(seedValue);
-            WindDice = rng.Next(1, 7);
+            WindDice = rng.Next(0, 6);
         }
 
         public void RerollPrecip()
         {
             rng = new Random(Guid.NewGuid().GetHashCode());
-            PrecipDice = rng.Next(1, 7);
+            PrecipDice = rng.Next(0, 6);
         }
 
         public void RerollPrecip(int seedValue)
         {
             rng = new Random(seedValue);
-            PrecipDice = rng.Next(1, 7);
+            PrecipDice = rng.Next(0, 6);
         }
 
         public void RerollTemp()
         {
             rng = new Random(Guid.NewGuid().GetHashCode());
-            TempretureDice = rng.Next(1, 7);
+            TempretureDice = rng.Next(0, 6);
         }
 
         public void RerollTemp(int seedValue)
         {
             rng = new Random(seedValue);
-            TempretureDice = rng.Next(1, 7);
+            TempretureDice = rng.Next(0, 6);
         }
 
         public bool EqualsWind(int value)
@@ -75,6 +75,21 @@ namespace Weather_Generation.WeatherGenerator.Model
         public bool EqualsPrecip(int value)
         {
             return value == PrecipDice;
+        }
+
+        public void ModifyWind(int value)
+        {
+            WindDice += value;
+        }
+
+        public void ModifyTemp(int value)
+        {
+            TempretureDice += value;
+        }
+
+        public void ModifyPrecip(int value)
+        {
+            PrecipDice += value;
         }
 
     }
