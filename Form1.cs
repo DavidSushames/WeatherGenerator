@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -22,7 +23,12 @@ namespace Weather_Generation
         int rollWind;
         int windMod;
         int counter = 0;
-        string checkMatch = "null";
+        string matches = "null";
+        string tempRange;
+        string precRange;
+        string windRange;
+        string weather;
+        string weatherCode;
         public Form1()
         {
             InitializeComponent();
@@ -85,7 +91,7 @@ namespace Weather_Generation
         }
         public void GenWeather()
         {
-            lbxWeather.Items.Insert(0, $"{rollTemp} {rollPrec} {rollWind} {checkMatch}");
+            lbxWeather.Items.Insert(0, weather);
         }
 
         private void btnRollAll_Click(object sender, EventArgs e)
@@ -93,7 +99,9 @@ namespace Weather_Generation
             RollTemp();
             RollPrec();
             RollWind();
-            checkDoubleTriple();
+            CheckDoubleTriple();
+            AssignRange();
+            SetWeather();
             GenWeather();
         }
         public void Roll2()
@@ -129,7 +137,8 @@ namespace Weather_Generation
         private void btnRoll2_Click(object sender, EventArgs e)
         {
             Roll2();
-            checkDoubleTriple();
+            CheckDoubleTriple();
+            AssignRange();
             GenWeather();
         }
 
@@ -166,21 +175,104 @@ namespace Weather_Generation
         private void btnRoll1_Click(object sender, EventArgs e)
         {
             Roll1();
-            checkDoubleTriple();
+            CheckDoubleTriple();
+            AssignRange();
             GenWeather();
         }
-        public void checkDoubleTriple()
+        public void CheckDoubleTriple()
         {
             if (rollTemp == rollPrec && rollPrec == rollWind && rollWind == rollTemp) //Check for triples
             {
-                checkMatch = "- TRIPLE";
+                matches = "Tr";
             }
             else if (rollTemp == rollPrec || rollPrec == rollWind || rollWind == rollTemp) //Check for doubles
             {
-                checkMatch = "- Double";
+                matches = "Do";
             }
-            else { checkMatch = ""; }
+            else { matches = ""; }
+        }
+        public void AssignRange()
+            //Because I don't want 216 different weathers, I'm treating a 1-2, 3-4. and 5-6 the same.
+            //Doubles and Triples still use their original numbers though. Because Triples are fun.
+            //Lo = Low, Mi = Mid, Hi = High.
+        {
+            if (rollTemp + tempMod <= 2) tempRange = "Lo";
+            else if (rollTemp + tempMod >= 3 && rollTemp + tempMod <= 4) tempRange = "Mi";
+            else tempRange = "Hi";
 
+            if (rollPrec + precMod <= 2) precRange = "Lo";
+            else if (rollPrec + precMod >= 3 && rollPrec + precMod <= 4) precRange = "Mi";
+            else precRange = "Hi";
+
+            if (rollWind + windMod <= 2) windRange = "Lo";
+            else if (rollWind + windMod >= 3 && rollWind + windMod <= 4) windRange = "Mi";
+            else windRange = "Hi";
+
+            weatherCode = $"{tempRange}{precRange}{windRange}{matches}";
+        }
+        public void SetWeather()
+        { 
+            if (weatherCode == "LoLoLoTr" && rollTemp == 1) weather = "DISASTER 1";
+            if (weatherCode == "LoLoLoTr" && rollTemp == 2) weather = "DISASTER 2";
+            if (weatherCode == "LoLoLoDo") weather = "Cold Dry Still Danger";
+            if (weatherCode == "LoLoMiDo") weather = "Cold Dry Calm Danger";
+            if (weatherCode == "LoLoMi") weather = "Cold Dry Calm";
+            if (weatherCode == "LoLoHiDo") weather = "Cold Dry Wind Danger";
+            if (weatherCode == "LoLoHi") weather = "Cold Dry Wind";
+
+            if (weatherCode == "LoMiLoDo") weather = "Cold Damp Still Danger";
+            if (weatherCode == "LoMiLo") weather = "Cold Damp Still";
+            if (weatherCode == "LoMiMiDo") weather = "Cold Damp Calm Danger";
+            if (weatherCode == "LoMiMi") weather = "Cold Damp Calm";
+            if (weatherCode == "LoMiHi") weather = "Cold Damp Wind";
+
+            if (weatherCode == "LoHiLoDo") weather = "Cold Wet Still Danger";
+            if (weatherCode == "LoHiLo") weather = "Cold Wet Still";
+            if (weatherCode == "LoHiMi") weather = "Cold Wet Calm";
+            if (weatherCode == "LoHiHiDo") weather = "Cold Wet Wind Danger";
+            if (weatherCode == "LoHiHi") weather = "Cold Wet Wind";
+
+
+            if (weatherCode == "MiLoLoDo") weather = "Tepid Dry Still Danger";
+            if (weatherCode == "MiLoLo") weather = "Tepid Dry Still";
+            if (weatherCode == "MiLoMiDo") weather = "Tepid Dry Calm Danger";
+            if (weatherCode == "MiLoMi") weather = "Tepid Dry Calm";
+            if (weatherCode == "MiLoHi") weather = "Tepid Dry Wind";
+
+            if (weatherCode == "MiMiLoDo") weather = "Tepid Damp Still Danger";
+            if (weatherCode == "MiMiLo") weather = "Tepid Damp Still";
+            if (weatherCode == "MiMiMiTr" && rollTemp == 3) weather = "DISASTER 3";
+            if (weatherCode == "MiMiMiTr" && rollTemp == 4) weather = "DISASTER 4";
+            if (weatherCode == "MiMiMiDo") weather = "Tepid Damp Still Danger";
+            if (weatherCode == "MiMiHiDo") weather = "Tepid Damp Wind Danger";
+            if (weatherCode == "MiMiHi") weather = "Tepid Damp Wind";
+
+            if (weatherCode == "MiHiLo") weather = "Tepid Wet Still";
+            if (weatherCode == "MiHiMiDo") weather = "Tepid Wet Calm Danger";
+            if (weatherCode == "MiHiMi") weather = "Tepid Wet Calm";
+            if (weatherCode == "MiHiHiDo") weather = "Tepid Wet Wind Danger";
+            if (weatherCode == "MiHiHi") weather = "Tepid Wet Wind";
+
+
+            if (weatherCode == "HiLoLoDo") weather = "Hot Dry Still Danger";
+            if (weatherCode == "HiLoLo") weather = "Hot Dry Still";
+            if (weatherCode == "HiLoMi") weather = "Hot Dry Calm";
+            if (weatherCode == "HiLoHiDo") weather = "Hot Dry Wind Danger";
+            if (weatherCode == "HiLoHi") weather = "Hot Dry Wind";
+
+            if (weatherCode == "HiMiLo") weather = "Hot Damp Still";
+            if (weatherCode == "HiMiMiDo") weather = "Hot Damp Calm Danger";
+            if (weatherCode == "HiMiMi") weather = "Hot Damp Calm";
+            if (weatherCode == "HiMiHiDo") weather = "Hot Damp Wind Danger";
+            if (weatherCode == "HiMiHi") weather = "Hot Damp Wind";
+
+            if (weatherCode == "HiHiLoDo") weather = "Hot Wet Still Danger";
+            if (weatherCode == "HiHiLo") weather = "Hot Wet Still";
+            if (weatherCode == "HiHiMiDo") weather = "Hot Wet Calm Danger";
+            if (weatherCode == "HiHiMi") weather = "Hot Wet Calm";
+            if (weatherCode == "HiHiHiTr" && rollTemp == 5) weather = "DISASTER 5";
+            if (weatherCode == "HiHiHiTr" && rollTemp == 6) weather = "DISASTER 6";
+            if (weatherCode == "HiHiHiDo") weather = "Hot Wet Wind Danger";
         }
     }
 }

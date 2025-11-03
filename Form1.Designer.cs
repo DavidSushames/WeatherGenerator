@@ -53,9 +53,9 @@
             this.lblPrecRoll = new System.Windows.Forms.Label();
             this.gbxTemp = new System.Windows.Forms.GroupBox();
             this.lblTempRoll = new System.Windows.Forms.Label();
+            this.lbxTempMod = new System.Windows.Forms.ListBox();
             this.lblTempMod = new System.Windows.Forms.Label();
             this.lbxTemperature = new System.Windows.Forms.ListBox();
-            this.lbxTempMod = new System.Windows.Forms.ListBox();
             this.gbxPrec = new System.Windows.Forms.GroupBox();
             this.lblWindRoll = new System.Windows.Forms.Label();
             this.lblWindMod = new System.Windows.Forms.Label();
@@ -82,9 +82,9 @@
             // lbxWeather
             // 
             this.lbxWeather.FormattingEnabled = true;
-            this.lbxWeather.Location = new System.Drawing.Point(363, 182);
+            this.lbxWeather.Location = new System.Drawing.Point(300, 182);
             this.lbxWeather.Name = "lbxWeather";
-            this.lbxWeather.Size = new System.Drawing.Size(109, 264);
+            this.lbxWeather.Size = new System.Drawing.Size(172, 264);
             this.lbxWeather.TabIndex = 4;
             // 
             // radSpring
@@ -146,7 +146,7 @@
             this.lbxPrecipitation.FormattingEnabled = true;
             this.lbxPrecipitation.Location = new System.Drawing.Point(7, 33);
             this.lbxPrecipitation.Name = "lbxPrecipitation";
-            this.lbxPrecipitation.Size = new System.Drawing.Size(40, 264);
+            this.lbxPrecipitation.Size = new System.Drawing.Size(35, 264);
             this.lbxPrecipitation.TabIndex = 14;
             // 
             // radTaiga
@@ -270,7 +270,7 @@
             // lblWeather
             // 
             this.lblWeather.AutoSize = true;
-            this.lblWeather.Location = new System.Drawing.Point(393, 166);
+            this.lblWeather.Location = new System.Drawing.Point(358, 166);
             this.lblWeather.Name = "lblWeather";
             this.lblWeather.Size = new System.Drawing.Size(48, 13);
             this.lblWeather.TabIndex = 29;
@@ -279,9 +279,9 @@
             // lbxPrecMod
             // 
             this.lbxPrecMod.FormattingEnabled = true;
-            this.lbxPrecMod.Location = new System.Drawing.Point(53, 33);
+            this.lbxPrecMod.Location = new System.Drawing.Point(49, 33);
             this.lbxPrecMod.Name = "lbxPrecMod";
-            this.lbxPrecMod.Size = new System.Drawing.Size(40, 264);
+            this.lbxPrecMod.Size = new System.Drawing.Size(35, 264);
             this.lbxPrecMod.TabIndex = 31;
             // 
             // lblPrecMod
@@ -310,7 +310,7 @@
             this.gbxTemp.Controls.Add(this.lbxTemperature);
             this.gbxTemp.Location = new System.Drawing.Point(12, 149);
             this.gbxTemp.Name = "gbxTemp";
-            this.gbxTemp.Size = new System.Drawing.Size(100, 303);
+            this.gbxTemp.Size = new System.Drawing.Size(90, 303);
             this.gbxTemp.TabIndex = 39;
             this.gbxTemp.TabStop = false;
             this.gbxTemp.Text = "Temperature";
@@ -318,16 +318,24 @@
             // lblTempRoll
             // 
             this.lblTempRoll.AutoSize = true;
-            this.lblTempRoll.Location = new System.Drawing.Point(18, 20);
+            this.lblTempRoll.Location = new System.Drawing.Point(11, 20);
             this.lblTempRoll.Name = "lblTempRoll";
             this.lblTempRoll.Size = new System.Drawing.Size(25, 13);
             this.lblTempRoll.TabIndex = 43;
             this.lblTempRoll.Text = "Roll";
             // 
+            // lbxTempMod
+            // 
+            this.lbxTempMod.FormattingEnabled = true;
+            this.lbxTempMod.Location = new System.Drawing.Point(49, 34);
+            this.lbxTempMod.Name = "lbxTempMod";
+            this.lbxTempMod.Size = new System.Drawing.Size(35, 264);
+            this.lbxTempMod.TabIndex = 42;
+            // 
             // lblTempMod
             // 
             this.lblTempMod.AutoSize = true;
-            this.lblTempMod.Location = new System.Drawing.Point(61, 20);
+            this.lblTempMod.Location = new System.Drawing.Point(45, 20);
             this.lblTempMod.Name = "lblTempMod";
             this.lblTempMod.Size = new System.Drawing.Size(28, 13);
             this.lblTempMod.TabIndex = 44;
@@ -338,16 +346,8 @@
             this.lbxTemperature.FormattingEnabled = true;
             this.lbxTemperature.Location = new System.Drawing.Point(6, 34);
             this.lbxTemperature.Name = "lbxTemperature";
-            this.lbxTemperature.Size = new System.Drawing.Size(40, 264);
+            this.lbxTemperature.Size = new System.Drawing.Size(35, 264);
             this.lbxTemperature.TabIndex = 41;
-            // 
-            // lbxTempMod
-            // 
-            this.lbxTempMod.FormattingEnabled = true;
-            this.lbxTempMod.Location = new System.Drawing.Point(53, 34);
-            this.lbxTempMod.Name = "lbxTempMod";
-            this.lbxTempMod.Size = new System.Drawing.Size(40, 264);
-            this.lbxTempMod.TabIndex = 42;
             // 
             // gbxPrec
             // 
@@ -355,9 +355,9 @@
             this.gbxPrec.Controls.Add(this.lbxPrecipitation);
             this.gbxPrec.Controls.Add(this.lbxPrecMod);
             this.gbxPrec.Controls.Add(this.lblPrecRoll);
-            this.gbxPrec.Location = new System.Drawing.Point(124, 149);
+            this.gbxPrec.Location = new System.Drawing.Point(108, 149);
             this.gbxPrec.Name = "gbxPrec";
-            this.gbxPrec.Size = new System.Drawing.Size(100, 303);
+            this.gbxPrec.Size = new System.Drawing.Size(90, 303);
             this.gbxPrec.TabIndex = 40;
             this.gbxPrec.TabStop = false;
             this.gbxPrec.Text = "Precipitation";
@@ -383,17 +383,17 @@
             // lbxWindMod
             // 
             this.lbxWindMod.FormattingEnabled = true;
-            this.lbxWindMod.Location = new System.Drawing.Point(53, 33);
+            this.lbxWindMod.Location = new System.Drawing.Point(49, 34);
             this.lbxWindMod.Name = "lbxWindMod";
-            this.lbxWindMod.Size = new System.Drawing.Size(40, 264);
+            this.lbxWindMod.Size = new System.Drawing.Size(35, 264);
             this.lbxWindMod.TabIndex = 42;
             // 
             // lbxWind
             // 
             this.lbxWind.FormattingEnabled = true;
-            this.lbxWind.Location = new System.Drawing.Point(7, 34);
+            this.lbxWind.Location = new System.Drawing.Point(6, 34);
             this.lbxWind.Name = "lbxWind";
-            this.lbxWind.Size = new System.Drawing.Size(40, 264);
+            this.lbxWind.Size = new System.Drawing.Size(35, 264);
             this.lbxWind.TabIndex = 41;
             // 
             // gbxWind
@@ -402,9 +402,9 @@
             this.gbxWind.Controls.Add(this.lblWindRoll);
             this.gbxWind.Controls.Add(this.lbxWind);
             this.gbxWind.Controls.Add(this.lbxWindMod);
-            this.gbxWind.Location = new System.Drawing.Point(239, 149);
+            this.gbxWind.Location = new System.Drawing.Point(204, 149);
             this.gbxWind.Name = "gbxWind";
-            this.gbxWind.Size = new System.Drawing.Size(100, 303);
+            this.gbxWind.Size = new System.Drawing.Size(90, 303);
             this.gbxWind.TabIndex = 45;
             this.gbxWind.TabStop = false;
             this.gbxWind.Text = "Wind";
