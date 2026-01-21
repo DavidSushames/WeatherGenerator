@@ -17,9 +17,9 @@ namespace Weather_Generation
     {
         readonly Random random = new Random();
         //what the dice rolled from 1-6
-        int rollTemp;
-        int rollPrec;
-        int rollWind;
+        int tempRoll;
+        int precRoll;
+        int windRoll;
         //how much seasons/climate affects the roll
         int tempMod;
         int precMod;
@@ -38,8 +38,7 @@ namespace Weather_Generation
         }
         public void RollTemp()
         {
-            rollTemp = random.Next(1, 7);
-            lbxTemperature.Items.Insert(0, rollTemp);
+            tempRoll = random.Next(1, 7);
 
             int tempSeasonMod = 0;
             if (radSummer.Checked) tempSeasonMod++;
@@ -53,12 +52,10 @@ namespace Weather_Generation
             if (cbxMidseason.Checked) tempModMult = 2;
             
             tempMod = (tempSeasonMod * tempModMult) + tempClimateMod;
-            lbxTempMod.Items.Insert(0, tempMod);
         }
         public void RollPrec()
         {
-            rollPrec = random.Next(1, 7);
-            lbxPrecipitation.Items.Insert(0, rollPrec);
+            precRoll = random.Next(1, 7);
 
             int precSeasonMod = 0;
             if (radSpring.Checked) precSeasonMod++;
@@ -71,12 +68,10 @@ namespace Weather_Generation
             if (cbxMidseason.Checked) precModMult = 2;
             
             precMod = (precSeasonMod * precModMult) + precClimateMod;
-            lbxPrecMod.Items.Insert(0, precMod);
         }
-        public int RollWind()
+        public void RollWind()
         {
-            rollWind = random.Next(1, 7);
-            lbxWind.Items.Insert(0, rollWind);
+            windRoll = random.Next(1, 7);
 
             int windSeasonMod = 0;
             if (radAutumn.Checked) windSeasonMod++;
@@ -88,138 +83,116 @@ namespace Weather_Generation
             if (cbxMidseason.Checked) windModMult = 2;
 
             windMod = (windSeasonMod * windModMult) + windClimateMod;
-            lbxWindMod.Items.Insert(0, windMod);
-
-            return rollWind;
         }
-        public void GenWeather()
-        {
-            lbxWeather.Items.Insert(0, weather);
-        }
-
         private void btnRollAll_Click(object sender, EventArgs e)
         {
             RollTemp();
             RollPrec();
             RollWind();
-            CheckDoubleTriple();
-            AssignRange();
-            SetWeather();
-            GenWeather();
+            Continue();
         }
         public void Roll2()
         {
-            if (rollTemp == 0 || rollPrec == 0 || rollWind == 0)
+            if (tempRoll == 0 || precRoll == 0 || windRoll == 0)
             {
                 RollTemp();
                 RollPrec();
                 RollWind();
             }
-            else if (cycleCounter == 0) // Temp Prec
+            else if (cycleCounter == 1) // Temp Prec
             {
                 RollTemp();
                 RollPrec();
-                lbxWind.Items.Insert(0, rollWind);
-                cycleCounter++;
             }
-            else if (cycleCounter == 1) // Prec Wind
+            else if (cycleCounter == 2) // Prec Wind
             {
-                lbxTemperature.Items.Insert(0, rollTemp);
                 RollPrec();
                 RollWind();
-                cycleCounter++;
             }
-            else if (cycleCounter == 2) // Wind Temp
+            else if (cycleCounter == 0) // Wind Temp
             {
                 RollTemp();
-                lbxPrecipitation.Items.Insert(0, rollPrec);
                 RollWind();
-                cycleCounter = 0;
             }
+            cycleCounter = (cycleCounter + 1) % 3;
         }
         private void btnRoll2_Click(object sender, EventArgs e)
         {
             Roll2();
-            CheckDoubleTriple();
-            AssignRange();
-            SetWeather();
-            GenWeather();
+            Continue();
         }
         public void Roll1()
         {
-            if (rollTemp == 0 || rollPrec == 0 || rollWind == 0)
+            if (tempRoll == 0 || precRoll == 0 || windRoll == 0)
             {
                 RollTemp();
                 RollPrec();
                 RollWind();
             }
-            else if (cycleCounter == 0) // Temp
+            else if (cycleCounter == 1) // Temp
             {
                 RollTemp();
-                lbxPrecipitation.Items.Insert(0, rollPrec);
-                lbxPrecMod.Items.Insert(0, precMod);
-                lbxWind.Items.Insert(0, rollWind);
-                lbxWindMod.Items.Insert(0, windMod);
-                cycleCounter++;
             }
-            else if (cycleCounter == 1) // Prec
+            else if (cycleCounter == 2) // Prec
             {
-                lbxTemperature.Items.Insert(0, rollTemp);
-                lbxTempMod.Items.Insert(0, tempMod);
                 RollPrec();
-                lbxWind.Items.Insert(0, rollWind);
-                lbxWindMod.Items.Insert(0, windMod);
-                cycleCounter++;
             }
-            else if (cycleCounter == 2) // Wind
+            else if (cycleCounter == 0) // Wind
             {
-                lbxTemperature.Items.Insert(0, rollTemp);
-                lbxTempMod.Items.Insert(0, tempMod);
-                lbxPrecipitation.Items.Insert(0, rollPrec);
-                lbxPrecMod.Items.Insert(0, precMod);
                 RollWind();
-                cycleCounter = 0;
             }
+            cycleCounter = (cycleCounter+1) % 3;
         }
         private void btnRoll1_Click(object sender, EventArgs e)
         {
             Roll1();
+            Continue();
+        }
+        private void Continue()
+        {
             CheckDoubleTriple();
             AssignRange();
-            SetWeather();
-            GenWeather();
+            FillDataView();
         }
         public void CheckDoubleTriple()
         {
-            if (rollTemp == rollPrec && rollPrec == rollWind && rollWind == rollTemp) //Check for triples
+            if (tempRoll == precRoll && precRoll == windRoll && windRoll == tempRoll) //Check for triples
             {
-                matches = "Tr";
+                matches = "Triple";
             }
-            else if (rollTemp == rollPrec || rollPrec == rollWind || rollWind == rollTemp) //Check for doubles
+            else if (tempRoll == precRoll || precRoll == windRoll || windRoll == tempRoll) //Check for doubles
             {
-                matches = "Do";
+                matches = " Double";
             }
             else { matches = ""; }
         }
         public void AssignRange()
-            //Because I don't want 216 different weathers, I'm treating a 1-2, 3-4. and 5-6 the same.
-            //Doubles and Triples still use their original numbers though. Because Triples are fun.
-            //Lo = Low, Mi = Mid, Hi = High.
         {
-            if (rollTemp + tempMod <= 2) tempRange = "Lo";
-            else if (rollTemp + tempMod >= 3 && rollTemp + tempMod <= 4) tempRange = "Mi";
-            else tempRange = "Hi";
+            //Temperature
+            if (tempRoll + tempMod <= 0) tempRange = "Freezing";
+            else if (tempRoll + tempMod >= 1 && tempRoll + tempMod <= 2) tempRange = "Cold";
+            else if (tempRoll + tempMod >= 3 && tempRoll + tempMod <= 4) tempRange = "Comfortable";
+            else if (tempRoll + tempMod >= 5 && tempRoll + tempMod <= 6) tempRange = "Hot";
+            else if (tempRoll + tempMod >= 7) tempRange = "Burning";
 
-            if (rollPrec + precMod <= 2) precRange = "Lo";
-            else if (rollPrec + precMod >= 3 && rollPrec + precMod <= 4) precRange = "Mi";
-            else precRange = "Hi";
+            //Precipitation
+            if (precRoll + precMod <= 2) precRange = "Clear";
+            else if (precRoll + precMod >= 3 && precRoll + precMod <= 4) precRange = "Overcast";
+            else if (precRoll + precMod >= 5 && precRoll + precMod <= 6) precRange = "Rain";
+            else if (precRoll + precMod >= 7) precRange = "Downpour";
 
-            if (rollWind + windMod <= 2) windRange = "Lo";
-            else if (rollWind + windMod >= 3 && rollWind + windMod <= 4) windRange = "Mi";
-            else windRange = "Hi";
+            //Wind
+            if (windRoll + windMod <= 1) windRange = "Still";
+            else if (windRoll + windMod >= 2 && windRoll + windMod <= 4) windRange = "Gentle";
+            else if (windRoll + windMod == 5) windRange = "Windy";
+            else if (windRoll + windMod >= 6) windRange = "Gale";
 
-            if (matches == "Tr") weatherCode = $"Triple{rollTemp}";
-            else weatherCode = $"{tempRange}{precRange}{windRange}{matches}";
+            if (matches == "Triple") weatherCode = $"TRIPLE {tempRoll}, NUKE THEM.";
+            else weatherCode = $"{tempRange} {precRange} {windRange}{matches}";
+        }
+        public void FillDataView()
+        {
+            dgvWeather.Rows.Insert(0, tempRoll, tempMod, precRoll, precMod, windRoll, windMod, weatherCode);
         }
         public void SetWeather()
         {
