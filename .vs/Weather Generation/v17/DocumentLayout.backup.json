@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|c:\\users\\dave\\desktop\\weather generation\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|C:\\Users\\Dave\\Desktop\\Weather Generation\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EE3AB0D4-F446-4F08-89B5-906AE9D9F108}|Weather Generation.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -55,8 +55,7 @@
               "ToolTip": "C:\\Users\\Dave\\Desktop\\Weather Generation\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T23:20:40.303Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-27T23:20:40.303Z"
             }
           ]
         }

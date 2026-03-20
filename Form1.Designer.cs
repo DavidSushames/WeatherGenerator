@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnRollAll = new System.Windows.Forms.Button();
             this.btnRoll1 = new System.Windows.Forms.Button();
@@ -71,6 +71,7 @@
             this.tbxPrecMod = new System.Windows.Forms.TextBox();
             this.tbxTempMod = new System.Windows.Forms.TextBox();
             this.lblMod = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbxSeason.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbSeasonWind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbSeasonPrec)).BeginInit();
@@ -207,16 +208,16 @@
             // 
             // RollCount
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
-            this.RollCount.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkGray;
+            this.RollCount.DefaultCellStyle = dataGridViewCellStyle5;
             this.RollCount.HeaderText = "#";
             this.RollCount.Name = "RollCount";
             this.RollCount.Width = 26;
             // 
             // TRoll
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TRoll.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TRoll.DefaultCellStyle = dataGridViewCellStyle6;
             this.TRoll.HeaderText = "Temp Roll";
             this.TRoll.Name = "TRoll";
             this.TRoll.ReadOnly = true;
@@ -231,8 +232,8 @@
             // 
             // PRoll
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.PRoll.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PRoll.DefaultCellStyle = dataGridViewCellStyle7;
             this.PRoll.HeaderText = "Prec Roll";
             this.PRoll.Name = "PRoll";
             this.PRoll.ReadOnly = true;
@@ -247,8 +248,8 @@
             // 
             // WRoll
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.WRoll.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.WRoll.DefaultCellStyle = dataGridViewCellStyle8;
             this.WRoll.HeaderText = "Wind Roll";
             this.WRoll.Name = "WRoll";
             this.WRoll.ReadOnly = true;
@@ -436,11 +437,23 @@
             this.lblMod.TabIndex = 64;
             this.lblMod.Text = "Mod";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(622, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(253, 26);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "Rolling doubles gives interesting weather conditions.\r\nRolling triples gives disa" +
+    "sterous weather conditions.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 561);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMod);
             this.Controls.Add(this.tbxWindMod);
             this.Controls.Add(this.tbxPrecMod);
@@ -520,6 +533,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WeatherVals;
         private System.Windows.Forms.DataGridViewTextBoxColumn WeatherConds;
         private System.Windows.Forms.DataGridViewTextBoxColumn WHazards;
+        private System.Windows.Forms.Label label1;
     }
 }
 
