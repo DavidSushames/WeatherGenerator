@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblClimateText.Text" xml:space="preserve">
+    <value>CLIMATE:
+Tropical/Temperate Rainforest: +2/0 Temp, +2 Prec, -1 Wind.
+Savanna: +2 Temp
+Hot/Cold Desert: +2/-1 Temp, -2 Prec, +1 Wind.
+Hot/Cold Steppe: +2/-1 Temp, -1 Prec.
+Mediterranean: +1 Temp, -1 Prec.          
+Humid Subtropical: +1 Temp, +1 Prec.
+Humid Continental: 0,0,0         
+Oceanic: +1 Prec.
+Boreal Taiga: -1 Temp, +1 Wind.
+Tundra: -2 Temp, +1 Wind.
+</value>
+  </data>
 </root>

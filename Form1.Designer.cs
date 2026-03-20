@@ -28,50 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnRollAll = new System.Windows.Forms.Button();
-            this.lbxWeather = new System.Windows.Forms.ListBox();
-            this.radSpring = new System.Windows.Forms.RadioButton();
-            this.radSummer = new System.Windows.Forms.RadioButton();
-            this.radAutumn = new System.Windows.Forms.RadioButton();
-            this.radWinter = new System.Windows.Forms.RadioButton();
-            this.cbxMidseason = new System.Windows.Forms.CheckBox();
-            this.lbxPrecipitation = new System.Windows.Forms.ListBox();
-            this.radTaiga = new System.Windows.Forms.RadioButton();
-            this.radContinent = new System.Windows.Forms.RadioButton();
-            this.radDesert = new System.Windows.Forms.RadioButton();
-            this.radTropic = new System.Windows.Forms.RadioButton();
             this.btnRoll1 = new System.Windows.Forms.Button();
             this.btnRoll2 = new System.Windows.Forms.Button();
             this.lblRollAll = new System.Windows.Forms.Label();
             this.lblRoll2 = new System.Windows.Forms.Label();
             this.lblRoll1 = new System.Windows.Forms.Label();
             this.gbxSeason = new System.Windows.Forms.GroupBox();
-            this.tbxClimate = new System.Windows.Forms.GroupBox();
+            this.trbSeasonWind = new System.Windows.Forms.TrackBar();
+            this.trbSeasonPrec = new System.Windows.Forms.TrackBar();
+            this.trbSeasonTemp = new System.Windows.Forms.TrackBar();
+            this.dgvWeather = new System.Windows.Forms.DataGridView();
+            this.RollCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRoll = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRoll = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WRoll = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WMod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeatherVals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeatherConds = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WHazards = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTemp = new System.Windows.Forms.Label();
+            this.lblPrec = new System.Windows.Forms.Label();
+            this.lblWind = new System.Windows.Forms.Label();
             this.lblWeather = new System.Windows.Forms.Label();
-            this.lbxPrecMod = new System.Windows.Forms.ListBox();
-            this.lblPrecMod = new System.Windows.Forms.Label();
-            this.lblPrecRoll = new System.Windows.Forms.Label();
-            this.gbxTemp = new System.Windows.Forms.GroupBox();
-            this.lblTempRoll = new System.Windows.Forms.Label();
-            this.lbxTempMod = new System.Windows.Forms.ListBox();
-            this.lblTempMod = new System.Windows.Forms.Label();
-            this.lbxTemperature = new System.Windows.Forms.ListBox();
-            this.gbxPrec = new System.Windows.Forms.GroupBox();
-            this.lblWindRoll = new System.Windows.Forms.Label();
-            this.lblWindMod = new System.Windows.Forms.Label();
-            this.lbxWindMod = new System.Windows.Forms.ListBox();
-            this.lbxWind = new System.Windows.Forms.ListBox();
-            this.gbxWind = new System.Windows.Forms.GroupBox();
+            this.lblSliderTemp = new System.Windows.Forms.Label();
+            this.lblSliderPrec = new System.Windows.Forms.Label();
+            this.lblSliderWind = new System.Windows.Forms.Label();
+            this.gbxClimate = new System.Windows.Forms.GroupBox();
+            this.trbClimateWind = new System.Windows.Forms.TrackBar();
+            this.trbClimatePrec = new System.Windows.Forms.TrackBar();
+            this.trbClimateTemp = new System.Windows.Forms.TrackBar();
+            this.lblSeasonText = new System.Windows.Forms.Label();
+            this.lblClimateText = new System.Windows.Forms.Label();
+            this.tbxWindMod = new System.Windows.Forms.TextBox();
+            this.tbxPrecMod = new System.Windows.Forms.TextBox();
+            this.tbxTempMod = new System.Windows.Forms.TextBox();
+            this.lblMod = new System.Windows.Forms.Label();
             this.gbxSeason.SuspendLayout();
-            this.tbxClimate.SuspendLayout();
-            this.gbxTemp.SuspendLayout();
-            this.gbxPrec.SuspendLayout();
-            this.gbxWind.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbSeasonWind)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbSeasonPrec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbSeasonTemp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeather)).BeginInit();
+            this.gbxClimate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbClimateWind)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbClimatePrec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbClimateTemp)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRollAll
             // 
-            this.btnRollAll.Location = new System.Drawing.Point(372, 12);
+            this.btnRollAll.Location = new System.Drawing.Point(775, 25);
             this.btnRollAll.Name = "btnRollAll";
             this.btnRollAll.Size = new System.Drawing.Size(100, 23);
             this.btnRollAll.TabIndex = 3;
@@ -79,123 +92,9 @@
             this.btnRollAll.UseVisualStyleBackColor = true;
             this.btnRollAll.Click += new System.EventHandler(this.btnRollAll_Click);
             // 
-            // lbxWeather
-            // 
-            this.lbxWeather.FormattingEnabled = true;
-            this.lbxWeather.Location = new System.Drawing.Point(300, 182);
-            this.lbxWeather.Name = "lbxWeather";
-            this.lbxWeather.Size = new System.Drawing.Size(172, 264);
-            this.lbxWeather.TabIndex = 4;
-            // 
-            // radSpring
-            // 
-            this.radSpring.AutoSize = true;
-            this.radSpring.Location = new System.Drawing.Point(10, 19);
-            this.radSpring.Name = "radSpring";
-            this.radSpring.Size = new System.Drawing.Size(55, 17);
-            this.radSpring.TabIndex = 8;
-            this.radSpring.TabStop = true;
-            this.radSpring.Text = "Spring";
-            this.radSpring.UseVisualStyleBackColor = true;
-            // 
-            // radSummer
-            // 
-            this.radSummer.AutoSize = true;
-            this.radSummer.Location = new System.Drawing.Point(10, 42);
-            this.radSummer.Name = "radSummer";
-            this.radSummer.Size = new System.Drawing.Size(63, 17);
-            this.radSummer.TabIndex = 9;
-            this.radSummer.TabStop = true;
-            this.radSummer.Text = "Summer";
-            this.radSummer.UseVisualStyleBackColor = true;
-            // 
-            // radAutumn
-            // 
-            this.radAutumn.AutoSize = true;
-            this.radAutumn.Location = new System.Drawing.Point(10, 65);
-            this.radAutumn.Name = "radAutumn";
-            this.radAutumn.Size = new System.Drawing.Size(61, 17);
-            this.radAutumn.TabIndex = 10;
-            this.radAutumn.TabStop = true;
-            this.radAutumn.Text = "Autumn";
-            this.radAutumn.UseVisualStyleBackColor = true;
-            // 
-            // radWinter
-            // 
-            this.radWinter.AutoSize = true;
-            this.radWinter.Location = new System.Drawing.Point(10, 88);
-            this.radWinter.Name = "radWinter";
-            this.radWinter.Size = new System.Drawing.Size(56, 17);
-            this.radWinter.TabIndex = 11;
-            this.radWinter.TabStop = true;
-            this.radWinter.Text = "Winter";
-            this.radWinter.UseVisualStyleBackColor = true;
-            // 
-            // cbxMidseason
-            // 
-            this.cbxMidseason.AutoSize = true;
-            this.cbxMidseason.Location = new System.Drawing.Point(10, 112);
-            this.cbxMidseason.Name = "cbxMidseason";
-            this.cbxMidseason.Size = new System.Drawing.Size(80, 17);
-            this.cbxMidseason.TabIndex = 12;
-            this.cbxMidseason.Text = "Mid-season";
-            this.cbxMidseason.UseVisualStyleBackColor = true;
-            // 
-            // lbxPrecipitation
-            // 
-            this.lbxPrecipitation.FormattingEnabled = true;
-            this.lbxPrecipitation.Location = new System.Drawing.Point(7, 33);
-            this.lbxPrecipitation.Name = "lbxPrecipitation";
-            this.lbxPrecipitation.Size = new System.Drawing.Size(35, 264);
-            this.lbxPrecipitation.TabIndex = 14;
-            // 
-            // radTaiga
-            // 
-            this.radTaiga.AutoSize = true;
-            this.radTaiga.Location = new System.Drawing.Point(6, 88);
-            this.radTaiga.Name = "radTaiga";
-            this.radTaiga.Size = new System.Drawing.Size(52, 17);
-            this.radTaiga.TabIndex = 20;
-            this.radTaiga.TabStop = true;
-            this.radTaiga.Text = "Taiga";
-            this.radTaiga.UseVisualStyleBackColor = true;
-            // 
-            // radContinent
-            // 
-            this.radContinent.AutoSize = true;
-            this.radContinent.Location = new System.Drawing.Point(6, 65);
-            this.radContinent.Name = "radContinent";
-            this.radContinent.Size = new System.Drawing.Size(78, 17);
-            this.radContinent.TabIndex = 19;
-            this.radContinent.TabStop = true;
-            this.radContinent.Text = "Continental";
-            this.radContinent.UseVisualStyleBackColor = true;
-            // 
-            // radDesert
-            // 
-            this.radDesert.AutoSize = true;
-            this.radDesert.Location = new System.Drawing.Point(6, 42);
-            this.radDesert.Name = "radDesert";
-            this.radDesert.Size = new System.Drawing.Size(56, 17);
-            this.radDesert.TabIndex = 18;
-            this.radDesert.TabStop = true;
-            this.radDesert.Text = "Desert";
-            this.radDesert.UseVisualStyleBackColor = true;
-            // 
-            // radTropic
-            // 
-            this.radTropic.AutoSize = true;
-            this.radTropic.Location = new System.Drawing.Point(6, 19);
-            this.radTropic.Name = "radTropic";
-            this.radTropic.Size = new System.Drawing.Size(60, 17);
-            this.radTropic.TabIndex = 17;
-            this.radTropic.TabStop = true;
-            this.radTropic.Text = "Tropics";
-            this.radTropic.UseVisualStyleBackColor = true;
-            // 
             // btnRoll1
             // 
-            this.btnRoll1.Location = new System.Drawing.Point(372, 70);
+            this.btnRoll1.Location = new System.Drawing.Point(775, 123);
             this.btnRoll1.Name = "btnRoll1";
             this.btnRoll1.Size = new System.Drawing.Size(100, 23);
             this.btnRoll1.TabIndex = 21;
@@ -205,7 +104,7 @@
             // 
             // btnRoll2
             // 
-            this.btnRoll2.Location = new System.Drawing.Point(372, 41);
+            this.btnRoll2.Location = new System.Drawing.Point(775, 75);
             this.btnRoll2.Name = "btnRoll2";
             this.btnRoll2.Size = new System.Drawing.Size(100, 23);
             this.btnRoll2.TabIndex = 22;
@@ -216,7 +115,7 @@
             // lblRollAll
             // 
             this.lblRollAll.AutoSize = true;
-            this.lblRollAll.Location = new System.Drawing.Point(295, 17);
+            this.lblRollAll.Location = new System.Drawing.Point(789, 11);
             this.lblRollAll.Name = "lblRollAll";
             this.lblRollAll.Size = new System.Drawing.Size(71, 13);
             this.lblRollAll.TabIndex = 24;
@@ -225,7 +124,7 @@
             // lblRoll2
             // 
             this.lblRoll2.AutoSize = true;
-            this.lblRoll2.Location = new System.Drawing.Point(295, 46);
+            this.lblRoll2.Location = new System.Drawing.Point(789, 61);
             this.lblRoll2.Name = "lblRoll2";
             this.lblRoll2.Size = new System.Drawing.Size(71, 13);
             this.lblRoll2.TabIndex = 25;
@@ -234,7 +133,7 @@
             // lblRoll1
             // 
             this.lblRoll1.AutoSize = true;
-            this.lblRoll1.Location = new System.Drawing.Point(290, 75);
+            this.lblRoll1.Location = new System.Drawing.Point(789, 109);
             this.lblRoll1.Name = "lblRoll1";
             this.lblRoll1.Size = new System.Drawing.Size(76, 13);
             this.lblRoll1.TabIndex = 26;
@@ -242,203 +141,341 @@
             // 
             // gbxSeason
             // 
-            this.gbxSeason.Controls.Add(this.radSpring);
-            this.gbxSeason.Controls.Add(this.radSummer);
-            this.gbxSeason.Controls.Add(this.radAutumn);
-            this.gbxSeason.Controls.Add(this.radWinter);
-            this.gbxSeason.Controls.Add(this.cbxMidseason);
+            this.gbxSeason.Controls.Add(this.trbSeasonWind);
+            this.gbxSeason.Controls.Add(this.trbSeasonPrec);
+            this.gbxSeason.Controls.Add(this.trbSeasonTemp);
             this.gbxSeason.Location = new System.Drawing.Point(12, 7);
             this.gbxSeason.Name = "gbxSeason";
-            this.gbxSeason.Size = new System.Drawing.Size(100, 132);
+            this.gbxSeason.Size = new System.Drawing.Size(87, 133);
             this.gbxSeason.TabIndex = 27;
             this.gbxSeason.TabStop = false;
             this.gbxSeason.Text = "Season";
             // 
-            // tbxClimate
+            // trbSeasonWind
             // 
-            this.tbxClimate.Controls.Add(this.radTropic);
-            this.tbxClimate.Controls.Add(this.radDesert);
-            this.tbxClimate.Controls.Add(this.radContinent);
-            this.tbxClimate.Controls.Add(this.radTaiga);
-            this.tbxClimate.Location = new System.Drawing.Point(124, 7);
-            this.tbxClimate.Name = "tbxClimate";
-            this.tbxClimate.Size = new System.Drawing.Size(100, 132);
-            this.tbxClimate.TabIndex = 28;
-            this.tbxClimate.TabStop = false;
-            this.tbxClimate.Text = "Climate";
+            this.trbSeasonWind.Location = new System.Drawing.Point(4, 86);
+            this.trbSeasonWind.Margin = new System.Windows.Forms.Padding(0);
+            this.trbSeasonWind.Maximum = 2;
+            this.trbSeasonWind.Minimum = -2;
+            this.trbSeasonWind.Name = "trbSeasonWind";
+            this.trbSeasonWind.Size = new System.Drawing.Size(80, 45);
+            this.trbSeasonWind.TabIndex = 54;
+            this.trbSeasonWind.Scroll += new System.EventHandler(this.UpdateTextBoxes);
+            // 
+            // trbSeasonPrec
+            // 
+            this.trbSeasonPrec.Location = new System.Drawing.Point(4, 50);
+            this.trbSeasonPrec.Margin = new System.Windows.Forms.Padding(0);
+            this.trbSeasonPrec.Maximum = 2;
+            this.trbSeasonPrec.Minimum = -2;
+            this.trbSeasonPrec.Name = "trbSeasonPrec";
+            this.trbSeasonPrec.Size = new System.Drawing.Size(80, 45);
+            this.trbSeasonPrec.TabIndex = 52;
+            this.trbSeasonPrec.Scroll += new System.EventHandler(this.UpdateTextBoxes);
+            // 
+            // trbSeasonTemp
+            // 
+            this.trbSeasonTemp.Location = new System.Drawing.Point(4, 14);
+            this.trbSeasonTemp.Margin = new System.Windows.Forms.Padding(0);
+            this.trbSeasonTemp.Maximum = 2;
+            this.trbSeasonTemp.Minimum = -2;
+            this.trbSeasonTemp.Name = "trbSeasonTemp";
+            this.trbSeasonTemp.Size = new System.Drawing.Size(80, 45);
+            this.trbSeasonTemp.TabIndex = 50;
+            this.trbSeasonTemp.Scroll += new System.EventHandler(this.UpdateTextBoxes);
+            // 
+            // dgvWeather
+            // 
+            this.dgvWeather.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWeather.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RollCount,
+            this.TRoll,
+            this.TMod,
+            this.PRoll,
+            this.PMod,
+            this.WRoll,
+            this.WMod,
+            this.WeatherVals,
+            this.WeatherConds,
+            this.WHazards});
+            this.dgvWeather.Location = new System.Drawing.Point(12, 209);
+            this.dgvWeather.Name = "dgvWeather";
+            this.dgvWeather.RowHeadersWidth = 20;
+            this.dgvWeather.RowTemplate.Height = 16;
+            this.dgvWeather.Size = new System.Drawing.Size(863, 340);
+            this.dgvWeather.TabIndex = 46;
+            // 
+            // RollCount
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
+            this.RollCount.DefaultCellStyle = dataGridViewCellStyle1;
+            this.RollCount.HeaderText = "#";
+            this.RollCount.Name = "RollCount";
+            this.RollCount.Width = 26;
+            // 
+            // TRoll
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TRoll.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TRoll.HeaderText = "Temp Roll";
+            this.TRoll.Name = "TRoll";
+            this.TRoll.ReadOnly = true;
+            this.TRoll.Width = 35;
+            // 
+            // TMod
+            // 
+            this.TMod.HeaderText = "Temp Val";
+            this.TMod.Name = "TMod";
+            this.TMod.ReadOnly = true;
+            this.TMod.Width = 35;
+            // 
+            // PRoll
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PRoll.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PRoll.HeaderText = "Prec Roll";
+            this.PRoll.Name = "PRoll";
+            this.PRoll.ReadOnly = true;
+            this.PRoll.Width = 35;
+            // 
+            // PMod
+            // 
+            this.PMod.HeaderText = "Prec Val";
+            this.PMod.Name = "PMod";
+            this.PMod.ReadOnly = true;
+            this.PMod.Width = 35;
+            // 
+            // WRoll
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.WRoll.DefaultCellStyle = dataGridViewCellStyle4;
+            this.WRoll.HeaderText = "Wind Roll";
+            this.WRoll.Name = "WRoll";
+            this.WRoll.ReadOnly = true;
+            this.WRoll.Width = 35;
+            // 
+            // WMod
+            // 
+            this.WMod.HeaderText = "Wind Val";
+            this.WMod.Name = "WMod";
+            this.WMod.ReadOnly = true;
+            this.WMod.Width = 35;
+            // 
+            // WeatherVals
+            // 
+            this.WeatherVals.HeaderText = "Weather Values";
+            this.WeatherVals.Name = "WeatherVals";
+            this.WeatherVals.Width = 150;
+            // 
+            // WeatherConds
+            // 
+            this.WeatherConds.HeaderText = "Weather Conditions";
+            this.WeatherConds.Name = "WeatherConds";
+            this.WeatherConds.Width = 120;
+            // 
+            // WHazards
+            // 
+            this.WHazards.HeaderText = "Hazards";
+            this.WHazards.Name = "WHazards";
+            this.WHazards.Width = 330;
+            // 
+            // lblTemp
+            // 
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.Location = new System.Drawing.Point(27, 194);
+            this.lblTemp.Name = "lblTemp";
+            this.lblTemp.Size = new System.Drawing.Size(67, 13);
+            this.lblTemp.TabIndex = 47;
+            this.lblTemp.Text = "Temperature";
+            // 
+            // lblPrec
+            // 
+            this.lblPrec.AutoSize = true;
+            this.lblPrec.Location = new System.Drawing.Point(95, 194);
+            this.lblPrec.Name = "lblPrec";
+            this.lblPrec.Size = new System.Drawing.Size(65, 13);
+            this.lblPrec.TabIndex = 48;
+            this.lblPrec.Text = "Precipitation";
+            // 
+            // lblWind
+            // 
+            this.lblWind.AutoSize = true;
+            this.lblWind.Location = new System.Drawing.Point(165, 194);
+            this.lblWind.Name = "lblWind";
+            this.lblWind.Size = new System.Drawing.Size(32, 13);
+            this.lblWind.TabIndex = 49;
+            this.lblWind.Text = "Wind";
             // 
             // lblWeather
             // 
             this.lblWeather.AutoSize = true;
-            this.lblWeather.Location = new System.Drawing.Point(358, 166);
+            this.lblWeather.Location = new System.Drawing.Point(422, 194);
             this.lblWeather.Name = "lblWeather";
             this.lblWeather.Size = new System.Drawing.Size(48, 13);
             this.lblWeather.TabIndex = 29;
             this.lblWeather.Text = "Weather";
             // 
-            // lbxPrecMod
+            // lblSliderTemp
             // 
-            this.lbxPrecMod.FormattingEnabled = true;
-            this.lbxPrecMod.Location = new System.Drawing.Point(49, 33);
-            this.lbxPrecMod.Name = "lbxPrecMod";
-            this.lbxPrecMod.Size = new System.Drawing.Size(35, 264);
-            this.lbxPrecMod.TabIndex = 31;
+            this.lblSliderTemp.AutoSize = true;
+            this.lblSliderTemp.Location = new System.Drawing.Point(98, 25);
+            this.lblSliderTemp.Name = "lblSliderTemp";
+            this.lblSliderTemp.Size = new System.Drawing.Size(67, 13);
+            this.lblSliderTemp.TabIndex = 51;
+            this.lblSliderTemp.Text = "Temperature";
             // 
-            // lblPrecMod
+            // lblSliderPrec
             // 
-            this.lblPrecMod.AutoSize = true;
-            this.lblPrecMod.Location = new System.Drawing.Point(60, 19);
-            this.lblPrecMod.Name = "lblPrecMod";
-            this.lblPrecMod.Size = new System.Drawing.Size(28, 13);
-            this.lblPrecMod.TabIndex = 34;
-            this.lblPrecMod.Text = "Mod";
+            this.lblSliderPrec.AutoSize = true;
+            this.lblSliderPrec.Location = new System.Drawing.Point(100, 61);
+            this.lblSliderPrec.Name = "lblSliderPrec";
+            this.lblSliderPrec.Size = new System.Drawing.Size(65, 13);
+            this.lblSliderPrec.TabIndex = 53;
+            this.lblSliderPrec.Text = "Precipitation";
             // 
-            // lblPrecRoll
+            // lblSliderWind
             // 
-            this.lblPrecRoll.AutoSize = true;
-            this.lblPrecRoll.Location = new System.Drawing.Point(7, 20);
-            this.lblPrecRoll.Name = "lblPrecRoll";
-            this.lblPrecRoll.Size = new System.Drawing.Size(25, 13);
-            this.lblPrecRoll.TabIndex = 33;
-            this.lblPrecRoll.Text = "Roll";
+            this.lblSliderWind.AutoSize = true;
+            this.lblSliderWind.Location = new System.Drawing.Point(116, 97);
+            this.lblSliderWind.Name = "lblSliderWind";
+            this.lblSliderWind.Size = new System.Drawing.Size(32, 13);
+            this.lblSliderWind.TabIndex = 55;
+            this.lblSliderWind.Text = "Wind";
             // 
-            // gbxTemp
+            // gbxClimate
             // 
-            this.gbxTemp.Controls.Add(this.lblTempRoll);
-            this.gbxTemp.Controls.Add(this.lbxTempMod);
-            this.gbxTemp.Controls.Add(this.lblTempMod);
-            this.gbxTemp.Controls.Add(this.lbxTemperature);
-            this.gbxTemp.Location = new System.Drawing.Point(12, 149);
-            this.gbxTemp.Name = "gbxTemp";
-            this.gbxTemp.Size = new System.Drawing.Size(90, 303);
-            this.gbxTemp.TabIndex = 39;
-            this.gbxTemp.TabStop = false;
-            this.gbxTemp.Text = "Temperature";
+            this.gbxClimate.Controls.Add(this.trbClimateWind);
+            this.gbxClimate.Controls.Add(this.trbClimatePrec);
+            this.gbxClimate.Controls.Add(this.trbClimateTemp);
+            this.gbxClimate.Location = new System.Drawing.Point(165, 7);
+            this.gbxClimate.Name = "gbxClimate";
+            this.gbxClimate.Size = new System.Drawing.Size(87, 133);
+            this.gbxClimate.TabIndex = 28;
+            this.gbxClimate.TabStop = false;
+            this.gbxClimate.Text = "Climate";
             // 
-            // lblTempRoll
+            // trbClimateWind
             // 
-            this.lblTempRoll.AutoSize = true;
-            this.lblTempRoll.Location = new System.Drawing.Point(11, 20);
-            this.lblTempRoll.Name = "lblTempRoll";
-            this.lblTempRoll.Size = new System.Drawing.Size(25, 13);
-            this.lblTempRoll.TabIndex = 43;
-            this.lblTempRoll.Text = "Roll";
+            this.trbClimateWind.Location = new System.Drawing.Point(3, 86);
+            this.trbClimateWind.Margin = new System.Windows.Forms.Padding(0);
+            this.trbClimateWind.Maximum = 2;
+            this.trbClimateWind.Minimum = -2;
+            this.trbClimateWind.Name = "trbClimateWind";
+            this.trbClimateWind.Size = new System.Drawing.Size(80, 45);
+            this.trbClimateWind.TabIndex = 57;
+            this.trbClimateWind.Scroll += new System.EventHandler(this.UpdateTextBoxes);
             // 
-            // lbxTempMod
+            // trbClimatePrec
             // 
-            this.lbxTempMod.FormattingEnabled = true;
-            this.lbxTempMod.Location = new System.Drawing.Point(49, 34);
-            this.lbxTempMod.Name = "lbxTempMod";
-            this.lbxTempMod.Size = new System.Drawing.Size(35, 264);
-            this.lbxTempMod.TabIndex = 42;
+            this.trbClimatePrec.Location = new System.Drawing.Point(3, 50);
+            this.trbClimatePrec.Margin = new System.Windows.Forms.Padding(0);
+            this.trbClimatePrec.Maximum = 2;
+            this.trbClimatePrec.Minimum = -2;
+            this.trbClimatePrec.Name = "trbClimatePrec";
+            this.trbClimatePrec.Size = new System.Drawing.Size(80, 45);
+            this.trbClimatePrec.TabIndex = 56;
+            this.trbClimatePrec.Scroll += new System.EventHandler(this.UpdateTextBoxes);
             // 
-            // lblTempMod
+            // trbClimateTemp
             // 
-            this.lblTempMod.AutoSize = true;
-            this.lblTempMod.Location = new System.Drawing.Point(45, 20);
-            this.lblTempMod.Name = "lblTempMod";
-            this.lblTempMod.Size = new System.Drawing.Size(28, 13);
-            this.lblTempMod.TabIndex = 44;
-            this.lblTempMod.Text = "Mod";
+            this.trbClimateTemp.Location = new System.Drawing.Point(3, 14);
+            this.trbClimateTemp.Margin = new System.Windows.Forms.Padding(0);
+            this.trbClimateTemp.Maximum = 2;
+            this.trbClimateTemp.Minimum = -2;
+            this.trbClimateTemp.Name = "trbClimateTemp";
+            this.trbClimateTemp.Size = new System.Drawing.Size(80, 45);
+            this.trbClimateTemp.TabIndex = 55;
+            this.trbClimateTemp.Scroll += new System.EventHandler(this.UpdateTextBoxes);
             // 
-            // lbxTemperature
+            // lblSeasonText
             // 
-            this.lbxTemperature.FormattingEnabled = true;
-            this.lbxTemperature.Location = new System.Drawing.Point(6, 34);
-            this.lbxTemperature.Name = "lbxTemperature";
-            this.lbxTemperature.Size = new System.Drawing.Size(35, 264);
-            this.lbxTemperature.TabIndex = 41;
+            this.lblSeasonText.AutoSize = true;
+            this.lblSeasonText.Location = new System.Drawing.Point(318, 3);
+            this.lblSeasonText.Name = "lblSeasonText";
+            this.lblSeasonText.Size = new System.Drawing.Size(363, 39);
+            this.lblSeasonText.TabIndex = 56;
+            this.lblSeasonText.Text = "SEASON:\r\nSpring: +1 Prec.   Summer: +1 Temp.   Autumn: +1 Wind.   Winter: -1 Temp" +
+    ".\r\nMidseason doubles this.";
             // 
-            // gbxPrec
+            // lblClimateText
             // 
-            this.gbxPrec.Controls.Add(this.lblPrecMod);
-            this.gbxPrec.Controls.Add(this.lbxPrecipitation);
-            this.gbxPrec.Controls.Add(this.lbxPrecMod);
-            this.gbxPrec.Controls.Add(this.lblPrecRoll);
-            this.gbxPrec.Location = new System.Drawing.Point(108, 149);
-            this.gbxPrec.Name = "gbxPrec";
-            this.gbxPrec.Size = new System.Drawing.Size(90, 303);
-            this.gbxPrec.TabIndex = 40;
-            this.gbxPrec.TabStop = false;
-            this.gbxPrec.Text = "Precipitation";
+            this.lblClimateText.AutoSize = true;
+            this.lblClimateText.Location = new System.Drawing.Point(318, 44);
+            this.lblClimateText.Name = "lblClimateText";
+            this.lblClimateText.Size = new System.Drawing.Size(300, 143);
+            this.lblClimateText.TabIndex = 57;
+            this.lblClimateText.Text = resources.GetString("lblClimateText.Text");
             // 
-            // lblWindRoll
+            // tbxWindMod
             // 
-            this.lblWindRoll.AutoSize = true;
-            this.lblWindRoll.Location = new System.Drawing.Point(6, 20);
-            this.lblWindRoll.Name = "lblWindRoll";
-            this.lblWindRoll.Size = new System.Drawing.Size(25, 13);
-            this.lblWindRoll.TabIndex = 43;
-            this.lblWindRoll.Text = "Roll";
+            this.tbxWindMod.Location = new System.Drawing.Point(258, 94);
+            this.tbxWindMod.Name = "tbxWindMod";
+            this.tbxWindMod.Size = new System.Drawing.Size(20, 20);
+            this.tbxWindMod.TabIndex = 63;
             // 
-            // lblWindMod
+            // tbxPrecMod
             // 
-            this.lblWindMod.AutoSize = true;
-            this.lblWindMod.Location = new System.Drawing.Point(57, 20);
-            this.lblWindMod.Name = "lblWindMod";
-            this.lblWindMod.Size = new System.Drawing.Size(28, 13);
-            this.lblWindMod.TabIndex = 44;
-            this.lblWindMod.Text = "Mod";
+            this.tbxPrecMod.Location = new System.Drawing.Point(258, 58);
+            this.tbxPrecMod.Name = "tbxPrecMod";
+            this.tbxPrecMod.Size = new System.Drawing.Size(20, 20);
+            this.tbxPrecMod.TabIndex = 62;
             // 
-            // lbxWindMod
+            // tbxTempMod
             // 
-            this.lbxWindMod.FormattingEnabled = true;
-            this.lbxWindMod.Location = new System.Drawing.Point(49, 34);
-            this.lbxWindMod.Name = "lbxWindMod";
-            this.lbxWindMod.Size = new System.Drawing.Size(35, 264);
-            this.lbxWindMod.TabIndex = 42;
+            this.tbxTempMod.Location = new System.Drawing.Point(258, 22);
+            this.tbxTempMod.Name = "tbxTempMod";
+            this.tbxTempMod.Size = new System.Drawing.Size(20, 20);
+            this.tbxTempMod.TabIndex = 61;
             // 
-            // lbxWind
+            // lblMod
             // 
-            this.lbxWind.FormattingEnabled = true;
-            this.lbxWind.Location = new System.Drawing.Point(6, 34);
-            this.lbxWind.Name = "lbxWind";
-            this.lbxWind.Size = new System.Drawing.Size(35, 264);
-            this.lbxWind.TabIndex = 41;
-            // 
-            // gbxWind
-            // 
-            this.gbxWind.Controls.Add(this.lblWindMod);
-            this.gbxWind.Controls.Add(this.lblWindRoll);
-            this.gbxWind.Controls.Add(this.lbxWind);
-            this.gbxWind.Controls.Add(this.lbxWindMod);
-            this.gbxWind.Location = new System.Drawing.Point(204, 149);
-            this.gbxWind.Name = "gbxWind";
-            this.gbxWind.Size = new System.Drawing.Size(90, 303);
-            this.gbxWind.TabIndex = 45;
-            this.gbxWind.TabStop = false;
-            this.gbxWind.Text = "Wind";
+            this.lblMod.AutoSize = true;
+            this.lblMod.Location = new System.Drawing.Point(255, 7);
+            this.lblMod.Name = "lblMod";
+            this.lblMod.Size = new System.Drawing.Size(28, 13);
+            this.lblMod.TabIndex = 64;
+            this.lblMod.Text = "Mod";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 461);
-            this.Controls.Add(this.gbxWind);
-            this.Controls.Add(this.gbxPrec);
-            this.Controls.Add(this.gbxTemp);
+            this.ClientSize = new System.Drawing.Size(887, 561);
+            this.Controls.Add(this.lblMod);
+            this.Controls.Add(this.tbxWindMod);
+            this.Controls.Add(this.tbxPrecMod);
+            this.Controls.Add(this.tbxTempMod);
+            this.Controls.Add(this.lblClimateText);
+            this.Controls.Add(this.lblSeasonText);
+            this.Controls.Add(this.gbxClimate);
+            this.Controls.Add(this.gbxSeason);
+            this.Controls.Add(this.lblSliderWind);
+            this.Controls.Add(this.lblSliderPrec);
+            this.Controls.Add(this.lblSliderTemp);
+            this.Controls.Add(this.lblWind);
+            this.Controls.Add(this.lblPrec);
+            this.Controls.Add(this.lblTemp);
+            this.Controls.Add(this.dgvWeather);
             this.Controls.Add(this.lblWeather);
-            this.Controls.Add(this.tbxClimate);
             this.Controls.Add(this.lblRoll1);
             this.Controls.Add(this.lblRoll2);
             this.Controls.Add(this.lblRollAll);
             this.Controls.Add(this.btnRoll2);
             this.Controls.Add(this.btnRoll1);
-            this.Controls.Add(this.lbxWeather);
             this.Controls.Add(this.btnRollAll);
-            this.Controls.Add(this.gbxSeason);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Weather Generator";
             this.gbxSeason.ResumeLayout(false);
             this.gbxSeason.PerformLayout();
-            this.tbxClimate.ResumeLayout(false);
-            this.tbxClimate.PerformLayout();
-            this.gbxTemp.ResumeLayout(false);
-            this.gbxTemp.PerformLayout();
-            this.gbxPrec.ResumeLayout(false);
-            this.gbxPrec.PerformLayout();
-            this.gbxWind.ResumeLayout(false);
-            this.gbxWind.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbSeasonWind)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbSeasonPrec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbSeasonTemp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWeather)).EndInit();
+            this.gbxClimate.ResumeLayout(false);
+            this.gbxClimate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbClimateWind)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbClimatePrec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trbClimateTemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,39 +483,43 @@
 
         #endregion
         private System.Windows.Forms.Button btnRollAll;
-        private System.Windows.Forms.ListBox lbxWeather;
-        private System.Windows.Forms.RadioButton radSpring;
-        private System.Windows.Forms.RadioButton radSummer;
-        private System.Windows.Forms.RadioButton radAutumn;
-        private System.Windows.Forms.RadioButton radWinter;
-        private System.Windows.Forms.CheckBox cbxMidseason;
-        private System.Windows.Forms.ListBox lbxPrecipitation;
-        private System.Windows.Forms.RadioButton radTaiga;
-        private System.Windows.Forms.RadioButton radContinent;
-        private System.Windows.Forms.RadioButton radDesert;
-        private System.Windows.Forms.RadioButton radTropic;
         private System.Windows.Forms.Button btnRoll1;
         private System.Windows.Forms.Button btnRoll2;
         private System.Windows.Forms.Label lblRollAll;
         private System.Windows.Forms.Label lblRoll2;
         private System.Windows.Forms.Label lblRoll1;
         private System.Windows.Forms.GroupBox gbxSeason;
-        private System.Windows.Forms.GroupBox tbxClimate;
+        private System.Windows.Forms.DataGridView dgvWeather;
+        private System.Windows.Forms.Label lblTemp;
+        private System.Windows.Forms.Label lblPrec;
+        private System.Windows.Forms.Label lblWind;
         private System.Windows.Forms.Label lblWeather;
-        private System.Windows.Forms.ListBox lbxPrecMod;
-        private System.Windows.Forms.Label lblPrecMod;
-        private System.Windows.Forms.Label lblPrecRoll;
-        private System.Windows.Forms.GroupBox gbxTemp;
-        private System.Windows.Forms.Label lblTempRoll;
-        private System.Windows.Forms.ListBox lbxTempMod;
-        private System.Windows.Forms.Label lblTempMod;
-        private System.Windows.Forms.ListBox lbxTemperature;
-        private System.Windows.Forms.GroupBox gbxPrec;
-        private System.Windows.Forms.Label lblWindRoll;
-        private System.Windows.Forms.Label lblWindMod;
-        private System.Windows.Forms.ListBox lbxWindMod;
-        private System.Windows.Forms.ListBox lbxWind;
-        private System.Windows.Forms.GroupBox gbxWind;
+        private System.Windows.Forms.TrackBar trbSeasonTemp;
+        private System.Windows.Forms.Label lblSliderTemp;
+        private System.Windows.Forms.TrackBar trbSeasonPrec;
+        private System.Windows.Forms.Label lblSliderPrec;
+        private System.Windows.Forms.TrackBar trbSeasonWind;
+        private System.Windows.Forms.Label lblSliderWind;
+        private System.Windows.Forms.GroupBox gbxClimate;
+        private System.Windows.Forms.TrackBar trbClimateWind;
+        private System.Windows.Forms.TrackBar trbClimatePrec;
+        private System.Windows.Forms.TrackBar trbClimateTemp;
+        private System.Windows.Forms.Label lblSeasonText;
+        private System.Windows.Forms.Label lblClimateText;
+        private System.Windows.Forms.TextBox tbxWindMod;
+        private System.Windows.Forms.TextBox tbxPrecMod;
+        private System.Windows.Forms.TextBox tbxTempMod;
+        private System.Windows.Forms.Label lblMod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RollCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRoll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TMod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRoll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PMod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WRoll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WMod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WeatherVals;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WeatherConds;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WHazards;
     }
 }
 
